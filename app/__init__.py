@@ -14,6 +14,9 @@ db =SQLAlchemy()
 def create_app(config_name):
 # Initializing application
     app = Flask(__name__)
+    
+    from .auth import auth as auth_blueprint
+    app.register_blueprint(auth_blueprint,url_prefix = '/authenticate')
 
 #Setting up configuration
 #creating the aoo configurations
