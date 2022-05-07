@@ -31,3 +31,12 @@ class RegistrationForm(FlaskForm):
 class UpdateProfile(FlaskForm):
     bio = TextAreaField('Tell us about you.',validators = [DataRequired()])
     submit = SubmitField('Submit')
+    
+    
+class ReviewForm(FlaskForm):
+
+title = StringField('Review title',validators=[Required()])
+
+review = TextAreaField('Movie review')
+
+submit = SubmitField('Submit')
