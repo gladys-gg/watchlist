@@ -10,10 +10,10 @@ class ReviewForm(FlaskForm):
     submit = SubmitField('Submit')
     
 class RegistrationForm(FlaskForm):
-    email = StringField('Your Email Address',validators=[Required(),Email()])
-    username = StringField('Enter your username',validators = [Required()])
-    password = PasswordField('Password',validators = [Required(), EqualTo('password_confirm',message = 'Passwords must match')])
-    password_confirm = PasswordField('Confirm Passwords',validators = [Required()])
+    email = StringField('Your Email Address',validators=[DataRequired(),Email()])
+    username = StringField('Enter your username',validators = [DataRequired()])
+    password = PasswordField('Password',validators = [DataRequired(), EqualTo('password_confirm',message = 'Passwords must match')])
+    password_confirm = PasswordField('Confirm Passwords',validators = [DataRequired()])
     submit = SubmitField('Sign Up')
     
 from wtforms import ValidationError
